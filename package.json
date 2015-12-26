@@ -1,0 +1,43 @@
+{
+  "name": "nrk-tv-cli",
+  "version": null,
+  "description": "Command line client for interacting with TV programs from the Norwegian Broadcasting Corporation (NRK)",
+  "main": "index.js",
+  "bin": "./index.js",
+  "scripts": {
+    "lint": "eslint index.js",
+    "semantic-release": "semantic-release",
+    "start": "./index.js",
+    "test": "echo \"Error: no test specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Starefossen/nrk-tv-cli.git"
+  },
+  "keywords": [
+    "NRK",
+    "TV",
+    "cli"
+  ],
+  "author": "Hans Kristian Flaatten <hans@starefossen.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Starefossen/nrk-tv-cli/issues"
+  },
+  "homepage": "https://github.com/Starefossen/nrk-tv-cli#readme",
+  "dependencies": {
+    "ascii-table": "0.0.8",
+    "chalk": "^1.1.1",
+    "image-to-ascii": "^2.2.0",
+    "inquirer": "^0.11.0",
+    "nomnom": "^1.8.1",
+    "nrk": "^1.2.0",
+    "request": "^2.67.0",
+    "uuid": "^2.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^1.10.3",
+    "eslint-config-airbnb": "2.1.1",
+    "semantic-release": "^4.3.5"
+  }
+}
