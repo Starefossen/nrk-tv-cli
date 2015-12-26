@@ -1,4 +1,4 @@
-box: node:argon
+box: starefossen/node-imagemagick:4-6
 
 build:
     steps:
