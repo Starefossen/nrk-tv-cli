@@ -40,4 +40,9 @@ Options:
    -v, --verbose        Output verbose information
 ```
 
+## Legal
+
+NRK is a registered trademark of the Norwegian Broadcast Corporation which is
+not affiliated with this product. Content from NRK APIs may be copyrighted.
+
 ## [MIT Licensed](https://github.com/Starefossen/nrk-tv-cli/blob/master/LICENSE)
