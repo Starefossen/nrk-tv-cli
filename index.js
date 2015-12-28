@@ -185,12 +185,35 @@ parser.command('episode')
       help: 'Show episode image',
       flag: true,
     },
+    'save-m3u': {
+      help: 'Save m3u playlist files to PATH',
+      metavar: 'PATH',
+      type: 'string',
+    },
   })
   .callback(function episodeCb(opts) {
     nrk.tv.mobil.programs(opts.id, function nrkTvMobilProgramsCb(err, data) {
       if (err) { throw err; }
       if (data === null) {
         return console.log(chalk.red(`Sorry, no episode matched "${opts.id}"!`));
+      }
+
+      if (opts['save-m3u']) {
+        const request = require('request');
+        const join = require('path').join;
+
+        const name = data.relativeOriginUrl.replace(/\//g, '-');
+        const path = join(opts['save-m3u'], `${name}.m3u8`);
+
+        request(data.mediaUrl)
+          .on('error', console.error.bind(console))
+          .on('end', function requestEnd() {
+            console.log(`playlist saved to ${bold(path)}`);
+            console.log();
+          })
+          .pipe(require('fs').createWriteStream(path));
+
+        return;
       }
 
       console.log(`${chalk.underline.bold(data.fullTitle)} (${data.programId})\n`);
