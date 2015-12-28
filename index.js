@@ -181,6 +181,10 @@ parser.command('episode')
       type: 'string',
       required: true,
     },
+    'show-image': {
+      help: 'Show episode image',
+      flag: true,
+    },
   })
   .callback(function episodeCb(opts) {
     nrk.tv.mobil.programs(opts.id, function nrkTvMobilProgramsCb(err, data) {
@@ -206,22 +210,24 @@ parser.command('episode')
       console.log();
       console.log(data.mediaUrl);
 
-      const imageToAscii = require('image-to-ascii');
-      const request = require('request');
+      if (opts['show-image']) {
+        const imageToAscii = require('image-to-ascii');
+        const request = require('request');
 
-      const path = `/tmp/${require('uuid').v4()}`;
-      const url = `http://gfx.nrk.no/${data.imageId}`;
-      request(url)
-        .on('error', console.error.bind(console))
-        .on('end', function requestEnd() {
-          imageToAscii(path, function imageToAsciiCb(asciiErr, ascii) {
-            if (asciiErr) { throw asciiErr; }
-            console.log();
-            console.log(ascii);
-            console.log(url);
-          });
-        })
-        .pipe(require('fs').createWriteStream(path));
+        const path = `/tmp/${require('uuid').v4()}`;
+        const url = `http://gfx.nrk.no/${data.imageId}`;
+        request(url)
+          .on('error', console.error.bind(console))
+          .on('end', function requestEnd() {
+            imageToAscii(path, function imageToAsciiCb(asciiErr, ascii) {
+              if (asciiErr) { throw asciiErr; }
+              console.log();
+              console.log(ascii);
+              console.log(url);
+            });
+          })
+          .pipe(require('fs').createWriteStream(path));
+        }
     });
   })
   .help('Get series episode');
