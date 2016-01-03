@@ -254,7 +254,7 @@ parser.command('episode')
             });
           })
           .pipe(require('fs').createWriteStream(path));
-        }
+      }
     });
   })
   .help('Get series episode');
