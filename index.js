@@ -217,7 +217,7 @@ parser.command('episode')
           })
           .pipe(require('fs').createWriteStream(path));
 
-        return;
+        return undefined;
       }
 
       console.log(`${chalk.underline.bold(data.fullTitle)} (${data.programId})\n`);
