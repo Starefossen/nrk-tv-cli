@@ -199,6 +199,10 @@ parser.command('episode')
       }
 
       if (opts['save-m3u']) {
+        if (!data.mediaUrl) {
+          return console.log(chalk.red(`Sorry, episode "${data.fullTitle}" has no m3u playlist!`));
+        }
+
         const request = require('request');
         const join = require('path').join;
 
