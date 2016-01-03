@@ -20,6 +20,7 @@ $ npm install nrk-tv-cli
 * List episode details
   * Render thumbnail image
   * Nice tabular layout view
+* Download episode m3u8 playlist
 
 ## Usage
 
