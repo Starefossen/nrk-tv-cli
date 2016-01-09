@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/* eslint no-console: 0 */
+/* eslint no-console: 0, no-param-reassign: 0 */
 'use strict';
 
 const pkg = require('./package');
