@@ -10,6 +10,7 @@ const bold = chalk.bold;
 const underline = chalk.underline;
 
 const parser = require('nomnom')
+  .nocolors()
   .script(pkg.name)
   .option('no-geo-block', {
     abbr: 'x',
