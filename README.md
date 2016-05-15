@@ -27,6 +27,7 @@ $ npm install nrk-tv-cli
   * Render thumbnail image
   * Nice tabular layout view
 * Download episode m3u8 playlist
+* Output JSON
 
 ## Usage
 
@@ -45,6 +46,7 @@ Options:
    -x, --no-geo-block   Only show items without geo-block
    -a, --avaiable       Only show items which are avaiable
    -v, --verbose        Output verbose information
+   -J, --json           Output as JSON
 ```
 
 ## Legal

@@ -25,6 +25,11 @@ const parser = require('nomnom')
     abbr: 'v',
     flag: true,
     help: 'Output verbose information',
+  })
+  .option('json', {
+    abbr: 'J',
+    flag: true,
+    help: 'Output as JSON',
   });
 
 parser.command('version')
@@ -54,6 +59,11 @@ parser.command('search')
     nrk.tv.mobil.search(opts.query, function nrkTvMobilSearchCb(err, data) {
       if (err) { throw err; }
       if (!data) { throw new Error('API retuned no data!'); }
+
+      if (opts.json) {
+        console.log(JSON.stringify(data, null, 4));
+        process.exit(0);
+      }
 
       // Filter = avaiability
       if (data.hits && opts.avaiable) {
@@ -130,6 +140,11 @@ parser.command('episodes')
         return console.log(chalk.red(`Sorry, no series matched "${opts.id}"!`));
       }
 
+      if (opts.json) {
+        console.log(JSON.stringify(data, null, 4));
+        process.exit(0);
+      }
+
       console.log(underline.bold(data.title));
       console.log(data.description);
       console.log();
@@ -196,6 +211,11 @@ parser.command('episode')
       if (err) { throw err; }
       if (data === null) {
         return console.log(chalk.red(`Sorry, no episode matched "${opts.id}"!`));
+      }
+
+      if (opts.json) {
+        console.log(JSON.stringify(data, null, 4));
+        process.exit(0);
       }
 
       if (opts['save-m3u']) {
