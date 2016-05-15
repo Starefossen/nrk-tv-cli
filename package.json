@@ -25,6 +25,9 @@
     "url": "https://github.com/Starefossen/nrk-tv-cli/issues"
   },
   "homepage": "https://github.com/Starefossen/nrk-tv-cli#readme",
+  "engines": {
+    "node": ">=4.0.0"
+  },
   "dependencies": {
     "ascii-table": "0.0.8",
     "chalk": "^1.1.1",
