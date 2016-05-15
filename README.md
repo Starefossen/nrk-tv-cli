@@ -32,11 +32,10 @@ $ npm install nrk-tv-cli
 ## Usage
 
 ```console
-$ nrk-tv-cli --help
 
 Usage: nrk-tv-cli <command> [options]
 
-command
+command     
   version      show package versions
   search       Search all of NRK TV
   episodes     List series episodes
@@ -47,6 +46,64 @@ Options:
    -a, --avaiable       Only show items which are avaiable
    -v, --verbose        Output verbose information
    -J, --json           Output as JSON
+
+Command line client for interacting with TV programs from the Norwegian Broadcasting Corporation (NRK)
+```
+
+### Search
+
+```console
+
+Usage: nrk-tv-cli search <query> [options]
+
+query     Search query string
+
+Options:
+   -x, --no-geo-block   Only show items without geo-block
+   -a, --avaiable       Only show items which are avaiable
+   -v, --verbose        Output verbose information
+   -J, --json           Output as JSON
+   -t, --type           Restrict results to given program types
+
+Search all of NRK TV
+```
+
+### Episodes
+
+```console
+
+Usage: nrk-tv-cli episodes <id> [options]
+
+id     Series id to get episodes for
+
+Options:
+   -x, --no-geo-block   Only show items without geo-block
+   -a, --avaiable       Only show items which are avaiable
+   -v, --verbose        Output verbose information
+   -J, --json           Output as JSON
+   -s, --season         Limit episodes to given season
+   --only-seasons       Only list seasons and no episodes
+
+List series episodes
+```
+
+### Episode
+
+```console
+
+Usage: nrk-tv-cli episode <id> [options]
+
+id     Episode ID to get details for
+
+Options:
+   -x, --no-geo-block   Only show items without geo-block
+   -a, --avaiable       Only show items which are avaiable
+   -v, --verbose        Output verbose information
+   -J, --json           Output as JSON
+   --show-image         Show episode image
+   --save-m3u PATH      Save m3u playlist files to PATH
+
+Get series episode
 ```
 
 ## Legal
