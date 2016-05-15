@@ -32,24 +32,32 @@ $ npm install nrk-tv-cli
 ## Usage
 
 ```console
+$ nrk-tv-cli --help
+
 __CLI_HELP__
 ```
 
 ### Search
 
 ```console
+$ nrk-tv-cli search --help
+
 __CLI_SEARCH__
 ```
 
 ### Episodes
 
 ```console
+$ nrk-tv-cli episodes --help
+
 __CLI_EPISODES__
 ```
 
 ### Episode
 
 ```console
+$ nrk-tv-cli episode --help
+
 __CLI_EPISODE__
 ```
 

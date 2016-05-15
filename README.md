@@ -32,6 +32,8 @@ $ npm install nrk-tv-cli
 ## Usage
 
 ```console
+$ nrk-tv-cli --help
+
 
 Usage: nrk-tv-cli <command> [options]
 
@@ -53,6 +55,8 @@ Command line client for interacting with TV programs from the Norwegian Broadcas
 ### Search
 
 ```console
+$ nrk-tv-cli search --help
+
 
 Usage: nrk-tv-cli search <query> [options]
 
@@ -71,6 +75,8 @@ Search all of NRK TV
 ### Episodes
 
 ```console
+$ nrk-tv-cli episodes --help
+
 
 Usage: nrk-tv-cli episodes <id> [options]
 
@@ -90,6 +96,8 @@ List series episodes
 ### Episode
 
 ```console
+$ nrk-tv-cli episode --help
+
 
 Usage: nrk-tv-cli episode <id> [options]
 
