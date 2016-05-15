@@ -31,7 +31,8 @@ const parser = require('nomnom')
     abbr: 'J',
     flag: true,
     help: 'Output as JSON',
-  });
+  })
+  .help(pkg.description);
 
 parser.command('version')
   .callback(function versionCb() {
