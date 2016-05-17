@@ -162,11 +162,18 @@ parser.command('episodes')
         return program;
       });
 
-      // Only list given season
+      // Filter: --season
       if (opts.season) {
         const re = new RegExp(opts.season, 'i');
         data.programs = data.programs.filter(function dataProgramFilter(program) {
           return re.test(program.seasonName);
+        });
+      }
+
+      // Filter: --available
+      if (opts.avaiable) {
+        data.programs = data.programs.filter(function dataProgramFilter(program) {
+          return program.isAvailable;
         });
       }
 
